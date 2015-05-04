@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Psns.Common.Logging</id>
+    <title>Psns Logging</title>
+    <authors>PSNS</authors>
+    <owners>109.14</owners>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>A simple logging library.</description>
+    <projectUrl>https://github.com/PSNS-IMF/logging</projectUrl>
+    <licenseUrl>https://github.com/PSNS-IMF/logging/blob/master/LICENSE.md</licenseUrl>
+    <releaseNotes>
+      ## 1.0.0.0
+      ### Features
+      * Initial release
+    </releaseNotes>
+    <version>$version$</version>
+    <tags>PSNS Logging</tags>
+    <dependencies>
+      <dependency id="AutoMapper" version="3.1.1" />
+      <dependency id="EnterpriseLibrary.Logging" version="5.0.505.1" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="readme.txt" />
+    <file src="content\*.*" target="content" />
+    <file src="..\bin\$configuration$\Psns.Common.Logging.*" target="lib\net40\" />
+    <file src="..\bin\$configuration$\net45\Psns.Common.Logging.*" target="lib\net45\" />
+  </files>
+</package>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Psns.Common.Logging</id>
+    <version>0.1</version>
+    <title>PSNS Logger</title>
+    <authors>109.34</authors>
+    <owners>109.34</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A Simple Logging Library</description>
+    <copyright>Copyright 2014</copyright>
+    <dependencies>
+      <dependency id="AutoMapper" version="3.1.1" />
+      <dependency id="EnterpriseLibrary.Logging" version="5.0.505.1" />
+    </dependencies>
+  </metadata>
+</package>
