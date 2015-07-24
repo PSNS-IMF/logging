@@ -19,12 +19,11 @@ namespace Psns.Common.Logging
         public Logger()
         {
             _writer = EnterpriseLibraryContainer.Current.GetInstance<LogWriter>();
+            Mapper.CreateMap<LoggerEntry, LogEntry>();
         }
 
         public void Write(LoggerEntry loggerEntry)
         {
-            Mapper.CreateMap<LoggerEntry, LogEntry>();
-
             var logEntry = new LogEntry();
             logEntry.Categories.Add(loggerEntry.Category);
             logEntry.ExtendedProperties.Add("username", loggerEntry.UserName);

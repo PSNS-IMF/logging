@@ -43,7 +43,7 @@ namespace Logging.UnitTests
             {
                 var text = reader.ReadLine();
                 Assert.IsTrue(text.EndsWith("Error\tUser One\tTest Category\t1\tTest Entry\t44"));
-                Assert.IsTrue(text.Substring(0, 8).Trim().StartsWith(DateTime.Today.ToShortDateString()));
+                Assert.IsTrue(text.StartsWith(DateTime.Today.ToShortDateString()));
             }
         }
     }
@@ -77,7 +77,7 @@ namespace Logging.UnitTests
             {
                 var text = reader.ReadLine();
                 Assert.IsTrue(text.EndsWith("Error\t\tTest Category\t1\tTest Entry\t44"));
-                Assert.IsTrue(text.Substring(0, 8).Trim().StartsWith(DateTime.Today.ToShortDateString()));
+                Assert.IsTrue(text.StartsWith(DateTime.Today.ToShortDateString()));
             }
         }
     }
@@ -167,7 +167,7 @@ namespace Logging.UnitTests
             {
                 var text = reader.ReadLine();
                 Assert.IsTrue(text.EndsWith("\t44"));
-                Assert.IsTrue(text.Substring(0, 8).Trim().StartsWith(DateTime.Today.ToShortDateString()));
+                Assert.IsTrue(text.StartsWith(DateTime.Now.ToShortDateString()));
             }
         }
     }

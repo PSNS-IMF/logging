@@ -10,6 +10,11 @@
     <projectUrl>https://github.com/PSNS-IMF/logging</projectUrl>
     <licenseUrl>https://github.com/PSNS-IMF/logging/blob/master/LICENSE.md</licenseUrl>
     <releaseNotes>
+      ## 1.0.0.1
+      ### Bug Fixes
+      * Moved initialization of AutoMapper into the constructor of the Logger in order to prevent collection
+      modification exceptions (see https://github.com/AutoMapper/AutoMapper/issues/619).
+
       ## 1.0.0.0
       ### Features
       * Initial release
