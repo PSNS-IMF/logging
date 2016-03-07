@@ -8,8 +8,6 @@ using System.IO;
 using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
 using Microsoft.Practices.EnterpriseLibrary.Logging;
 
-using AutoMapper;
-
 namespace Psns.Common.Logging
 {
     public class Logger : ILogger
@@ -19,16 +17,22 @@ namespace Psns.Common.Logging
         public Logger()
         {
             _writer = EnterpriseLibraryContainer.Current.GetInstance<LogWriter>();
-            Mapper.CreateMap<LoggerEntry, LogEntry>();
         }
 
         public void Write(LoggerEntry loggerEntry)
         {
-            var logEntry = new LogEntry();
+            var logEntry = new LogEntry
+            {
+                EventId = loggerEntry.EventId,
+                Message = loggerEntry.Message,
+                Priority = loggerEntry.Priority,
+                Severity = loggerEntry.Severity
+            };
+
             logEntry.Categories.Add(loggerEntry.Category);
             logEntry.ExtendedProperties.Add("username", loggerEntry.UserName);
 
-            _writer.Write(Mapper.Map<LoggerEntry, LogEntry>(loggerEntry, logEntry));
+            _writer.Write(logEntry);
         }
 
         #region IDisposable

@@ -10,6 +10,10 @@
     <projectUrl>https://github.com/PSNS-IMF/logging</projectUrl>
     <licenseUrl>https://github.com/PSNS-IMF/logging/blob/master/LICENSE.md</licenseUrl>
     <releaseNotes>
+      ## 1.0.0.2
+      ### Bug Fixes
+      * last bugfix didn't work; so removing AutoMapper and mapping manually.
+
       ## 1.0.0.1
       ### Bug Fixes
       * Moved initialization of AutoMapper into the constructor of the Logger in order to prevent collection
@@ -22,7 +26,6 @@
     <version>$version$</version>
     <tags>PSNS Logging</tags>
     <dependencies>
-      <dependency id="AutoMapper" version="3.1.1" />
       <dependency id="EnterpriseLibrary.Logging" version="5.0.505.1" />
     </dependencies>
   </metadata>
