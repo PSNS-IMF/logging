@@ -10,6 +10,10 @@
     <projectUrl>https://github.com/PSNS-IMF/logging</projectUrl>
     <licenseUrl>https://github.com/PSNS-IMF/logging/blob/master/LICENSE.md</licenseUrl>
     <releaseNotes>
+      ## 1.0.0.3
+      ### Features
+      * added additional extension methods to ILogger.
+
       ## 1.0.0.2
       ### Bug Fixes
       * last bugfix didn't work; so removing AutoMapper and mapping manually.
@@ -32,7 +36,6 @@
   <files>
     <file src="readme.txt" />
     <file src="content\*.*" target="content" />
-    <file src="..\bin\$configuration$\Psns.Common.Logging.*" target="lib\net40\" />
-    <file src="..\bin\$configuration$\net45\Psns.Common.Logging.*" target="lib\net45\" />
+    <file src="..\bin\Release\Psns.Common.Logging.*" target="lib\net45" exclude="**\*.dll.config;**\*Tests*;**\*Test*" />
   </files>
 </package>
