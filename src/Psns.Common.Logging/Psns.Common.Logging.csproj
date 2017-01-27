@@ -70,7 +70,7 @@
     <Compile Include="ILogger.cs" />
     <Compile Include="ILoggerExtensions.cs" />
     <Compile Include="LoggerEntry.cs" />
-    <Compile Include="Logger.cs" />
+    <Compile Include="NLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

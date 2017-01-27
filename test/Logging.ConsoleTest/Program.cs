@@ -11,7 +11,7 @@ namespace Logging.ConsoleTest
     {
         static void Main(string[] args)
         {
-            var logger = new Logger();
+            var logger = new NLogger();
             var tasks = new List<Task>();
 
             for(var i = 0; i < 100; i++)

@@ -8,7 +8,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{996B1D40-F7AE-4DB1-A870-35981E802950}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
-		45Build.proj = 45Build.proj
 		build.bat = build.bat
 		Build.proj = Build.proj
 		CodeCoverage.runsettings = CodeCoverage.runsettings

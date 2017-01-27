@@ -4,7 +4,7 @@ using iLogger = Psns.Common.Logging.ILogger;
 
 namespace Psns.Common.Logging
 {
-    public class Logger : iLogger
+    public class NLogger : iLogger
     {
         public void Write(LoggerEntry entry)
         {
