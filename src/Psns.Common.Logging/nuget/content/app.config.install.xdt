@@ -1,0 +1,62 @@
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+  <configSections>
+    <section name="nlog" type="NLog.Config.ConfigSectionHandler, NLog" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)" />
+  </configSections>
+  <nlog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <targets>
+      <target name="errorFile" xsi:type="AsyncWrapper" queueLimit="5000" overflowAction="Discard" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)">
+        <target 
+          name="ef" 
+          xsi:type="File" 
+          layout="${longdate}|${level:uppercase=true}|${logger}|${message}" 
+          fileName="c:\Temp\Error.log" 
+          archiveFileName="c:\Temp\Error.{#}.log" 
+          archiveAboveSize="2000000" 
+          maxArchiveFiles="10" 
+          archiveNumbering="DateAndSequence" 
+          archiveDateFormat="yyyyMMdd" 
+          keepFileOpen="true" 
+          openFileCacheTimeout="30"
+          xdt:Transform="InsertIfMissing" 
+          xdt:Locator="Match(name) "/>
+      </target>
+      <target name="infoFile" xsi:type="AsyncWrapper" queueLimit="5000" overflowAction="Discard" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)">
+        <target 
+          name="if" 
+          xsi:type="File" 
+          layout="${longdate}|${level:uppercase=true}|${logger}|${message}" 
+          fileName="c:\Temp\Info.log" 
+          archiveFileName="c:\Temp\Info.{#}.log" 
+          archiveAboveSize="2000000" 
+          maxArchiveFiles="10" 
+          archiveNumbering="DateAndSequence" 
+          archiveDateFormat="yyyyMMdd" 
+          keepFileOpen="true" 
+          openFileCacheTimeout="30"
+          xdt:Transform="InsertIfMissing" 
+          xdt:Locator="Match(name) "/>
+      </target>
+      <target name="debugFile" xsi:type="AsyncWrapper" queueLimit="5000" overflowAction="Discard" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)">
+        <target 
+          name="df" 
+          xsi:type="File" 
+          layout="${longdate}|${level:uppercase=true}|${logger}|${message}" 
+          fileName="c:\Temp\Debug.log" 
+          archiveFileName="c:\Temp\Debug.{#}.log" 
+          archiveAboveSize="2000000" 
+          maxArchiveFiles="10" 
+          archiveNumbering="DateAndSequence" 
+          archiveDateFormat="yyyyMMdd" 
+          keepFileOpen="true" 
+          openFileCacheTimeout="30"
+          xdt:Transform="InsertIfMissing" 
+          xdt:Locator="Match(name)" />
+      </target>
+    </targets>
+    <rules>
+      <logger name="*" minlevel="Warn" writeTo="errorFile" enabled="true" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)" />
+      <logger name="*" level="Info" writeTo="infoFile" enabled="true" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)" />
+      <logger name="*" level="Debug" writeTo="debugFile" enabled="false" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)" />
+    </rules>
+  </nlog>
+</configuration>

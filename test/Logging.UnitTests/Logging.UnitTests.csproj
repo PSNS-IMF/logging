@@ -56,9 +56,6 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Psns.Common.Test.BehaviorDrivenDevelopment">
-      <HintPath>..\..\packages\Psns.Common.Test.BehaviorDrivenDevelopment.1.0.0.13699\lib\net40\Psns.Common.Test.BehaviorDrivenDevelopment.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -78,12 +75,10 @@
   </Choose>
   <ItemGroup>
     <Compile Include="WhenInstantiatingALoggerEntry.cs" />
-    <Compile Include="WhenWritingToALogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Psns.Common.Logging\Psns.Common.Logging.csproj">

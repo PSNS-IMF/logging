@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace Psns.Common.Logging
+﻿namespace Psns.Common.Logging
 {
-    public interface ILogger : IDisposable
+    public interface ILogger
     {
         void Write(LoggerEntry entry);
     }

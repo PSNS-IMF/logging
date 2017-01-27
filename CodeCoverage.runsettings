@@ -12,7 +12,6 @@
               </Include>
               <Exclude>
                 <!--<ModulePath>.*CPPUnitTestFramework.*</ModulePath>-->
-                <ModulePath>.*Microsoft.*</ModulePath>
                 <ModulePath>.*Logging\.UnitTests.*</ModulePath>
               </Exclude>
             </ModulePaths>

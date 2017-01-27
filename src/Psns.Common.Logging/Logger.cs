@@ -1,53 +1,41 @@
-﻿using System;
-
-using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
-using Microsoft.Practices.EnterpriseLibrary.Logging;
+﻿using System.Diagnostics;
+using NLog;
+using iLogger = Psns.Common.Logging.ILogger;
 
 namespace Psns.Common.Logging
 {
-    public class Logger : ILogger
+    public class Logger : iLogger
     {
-        LogWriter _writer;
-
-        public Logger()
+        public void Write(LoggerEntry entry)
         {
-            _writer = EnterpriseLibraryContainer.Current.GetInstance<LogWriter>();
-        }
+            LogManager.ThrowExceptions = true;
+            var logger = LogManager.GetLogger(entry.Category);
+            var logLevel = LogLevel.Off;
 
-        public void Write(LoggerEntry loggerEntry)
-        {
-            var logEntry = new LogEntry
+            switch(entry.Severity)
             {
-                EventId = loggerEntry.EventId,
-                Message = loggerEntry.Message,
-                Priority = loggerEntry.Priority,
-                Severity = loggerEntry.Severity
-            };
+                case TraceEventType.Critical:
+                    logLevel = LogLevel.Fatal;
+                    break;
 
-            logEntry.Categories.Add(loggerEntry.Category);
-            logEntry.ExtendedProperties.Add("username", loggerEntry.UserName);
+                case TraceEventType.Error:
+                    logLevel = LogLevel.Error;
+                    break;
 
-            _writer.Write(logEntry);
-        }
+                case TraceEventType.Warning:
+                    logLevel = LogLevel.Warn;
+                    break;
 
-        #region IDisposable
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
+                case TraceEventType.Information:
+                    logLevel = LogLevel.Info;
+                    break;
 
-        protected virtual void Dispose(bool disposing)
-        {
-            if (disposing) 
-            {
-                if (_writer != null)
-                {
-                    _writer.Dispose();
-                    _writer = null;
-                }
+                case TraceEventType.Verbose:
+                    logLevel = LogLevel.Debug;
+                    break;
             }
+
+            logger.Log(logLevel, entry.Message);
         }
-        #endregion
     }
 }

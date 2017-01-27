@@ -1,9 +1,5 @@
-Documentation for Enterprise Library 5 can be found here: http://msdn.microsoft.com/en-us/library/ff632023.aspx
-Nuget.exe must be added to PATH on build system
+Documentation for NLog can be found here: https://github.com/NLog/NLog/wiki
 
-* To change the location of the log file set:
-	<app|web>.config
-		loggingConfiguration
-			listeners
-				add
-					fileName="<path\nameoffile.txt>"
+!!!! Important - The MSBuild "Copy to Output Directory" property of "NLog.xsd" must be set to "Copy if newer"; otherwise, no logging and no runtime errors
+
+Nuget.exe must be added to PATH on build system

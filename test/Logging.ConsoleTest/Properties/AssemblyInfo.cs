@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Logging")]
-[assembly: AssemblyDescription("A Simple Logging Library")]
+[assembly: AssemblyTitle("Logging.ConsoleTest")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Puget Sound Naval Shipyard")]
-[assembly: AssemblyProduct("Logging")]
-[assembly: AssemblyCopyright("Copyright © Puget Sound Naval Shipyard 2017")]
+[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyProduct("Logging.ConsoleTest")]
+[assembly: AssemblyCopyright("Copyright © Microsoft 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("04494a11-46af-4f5e-a908-8c5d8be1d28f")]
+[assembly: Guid("25e682f7-353a-4da8-b3b6-f4c27b8a7224")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.0.0.0")]
-[assembly: AssemblyFileVersion("2.0.0.0")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]

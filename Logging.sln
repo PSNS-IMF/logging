@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging.UnitTests", "test\Logging.UnitTests\Logging.UnitTests.csproj", "{1ECC2ED2-122C-4517-97E7-43F4AC45B37F}"
 EndProject
@@ -22,6 +22,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B8B764A5-516
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{3CCEDFE7-4EF2-403C-BE9B-33C798F5440A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging.ConsoleTest", "test\Logging.ConsoleTest\Logging.ConsoleTest.csproj", "{25E682F7-353A-4DA8-B3B6-F4C27B8A7224}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,12 @@ Global
 		{47D3FA38-BF52-4025-A6BD-71170AF98BDF}.Deploy|Any CPU.Build.0 = Deploy|Any CPU
 		{47D3FA38-BF52-4025-A6BD-71170AF98BDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47D3FA38-BF52-4025-A6BD-71170AF98BDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25E682F7-353A-4DA8-B3B6-F4C27B8A7224}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25E682F7-353A-4DA8-B3B6-F4C27B8A7224}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25E682F7-353A-4DA8-B3B6-F4C27B8A7224}.Deploy|Any CPU.ActiveCfg = Debug|Any CPU
+		{25E682F7-353A-4DA8-B3B6-F4C27B8A7224}.Deploy|Any CPU.Build.0 = Debug|Any CPU
+		{25E682F7-353A-4DA8-B3B6-F4C27B8A7224}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25E682F7-353A-4DA8-B3B6-F4C27B8A7224}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +56,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{1ECC2ED2-122C-4517-97E7-43F4AC45B37F} = {3CCEDFE7-4EF2-403C-BE9B-33C798F5440A}
 		{47D3FA38-BF52-4025-A6BD-71170AF98BDF} = {B8B764A5-5164-43FE-8878-09A035FF151B}
+		{25E682F7-353A-4DA8-B3B6-F4C27B8A7224} = {3CCEDFE7-4EF2-403C-BE9B-33C798F5440A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35;packages\Unity.Interception.2.1.505.2\lib\NET35;packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.Logging.5.0.505.1\lib\NET35

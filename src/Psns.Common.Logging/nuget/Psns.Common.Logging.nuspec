@@ -10,6 +10,10 @@
     <projectUrl>https://github.com/PSNS-IMF/logging</projectUrl>
     <licenseUrl>https://github.com/PSNS-IMF/logging/blob/master/LICENSE.md</licenseUrl>
     <releaseNotes>
+      ## 2.0.0.0
+      ### Features
+      * switched to NLog logging framework because of better support for concurrent log writing
+
       ## 1.0.0.4
       ### Features
       * changed TargetFramework to 4.5
@@ -34,7 +38,8 @@
     <version>$version$</version>
     <tags>PSNS Logging</tags>
     <dependencies>
-      <dependency id="EnterpriseLibrary.Logging" version="5.0.505.1" />
+      <dependency id="NLog.Schema" version="4.4.1" />
+      <dependency id="NLog" version="4.4.1" />
     </dependencies>
   </metadata>
   <files>
