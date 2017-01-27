@@ -45,6 +45,6 @@
   <files>
     <file src="readme.txt" />
     <file src="content\*.*" target="content" />
-    <file src="..\bin\Release\Psns.Common.Logging.*" target="lib\net45" exclude="**\*.dll.config;**\*Tests*;**\*Test*" />
+    <file src="src\Psns.Common.Logging\bin\Release\Psns.Common.Logging.*" target="lib\net45" exclude="**\*.dll.config;**\*Tests*;**\*Test*" />
   </files>
 </package>
