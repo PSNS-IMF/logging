@@ -1,9 +1,9 @@
 <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
   <configSections>
-    <section name="nlog" type="NLog.Config.ConfigSectionHandler, NLog" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)" />
+    <section name="nlog" type="NLog.Config.ConfigSectionHandler, NLog" />
   </configSections>
-  <nlog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <targets>
+  <nlog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xdt:Transform="InsertIfMissing">
+    <targets xdt:Transform="InsertIfMissing">
       <target name="errorFile" xsi:type="AsyncWrapper" queueLimit="5000" overflowAction="Discard" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)">
         <target 
           name="ef" 
@@ -53,7 +53,7 @@
           xdt:Locator="Match(name)" />
       </target>
     </targets>
-    <rules>
+    <rules xdt:Transform="InsertIfMissing">
       <logger name="*" minlevel="Warn" writeTo="errorFile" enabled="true" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)" />
       <logger name="*" level="Info" writeTo="infoFile" enabled="true" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)" />
       <logger name="*" level="Debug" writeTo="debugFile" enabled="false" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)" />

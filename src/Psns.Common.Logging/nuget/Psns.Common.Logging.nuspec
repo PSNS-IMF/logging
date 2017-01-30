@@ -10,6 +10,10 @@
     <projectUrl>https://github.com/PSNS-IMF/logging</projectUrl>
     <licenseUrl>https://github.com/PSNS-IMF/logging/blob/master/LICENSE.md</licenseUrl>
     <releaseNotes>
+      ## 2.0.0.1
+      ### Features
+      * Fixing issue with transform config file
+
       ## 2.0.0.0
       ### Features
       * switched to NLog logging framework because of better support for concurrent log writing
@@ -45,6 +49,6 @@
   <files>
     <file src="readme.txt" />
     <file src="content\*.*" target="content" />
-    <file src="src\Psns.Common.Logging\bin\Release\Psns.Common.Logging.*" target="lib\net45" exclude="**\*.dll.config;**\*Tests*;**\*Test*" />
+    <file src="..\bin\Release\Psns.Common.Logging.*" target="lib\net45" exclude="**\*.dll.config;**\*Tests*;**\*Test*" />
   </files>
 </package>
