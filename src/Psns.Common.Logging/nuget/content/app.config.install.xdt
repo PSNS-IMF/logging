@@ -1,10 +1,10 @@
 <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
-  <configSections>
-    <section name="nlog" type="NLog.Config.ConfigSectionHandler, NLog" />
+  <configSections xdt:Transform="InsertIfMissing">
+    <section name="nlog" type="NLog.Config.ConfigSectionHandler, NLog" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)" />
   </configSections>
   <nlog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xdt:Transform="InsertIfMissing">
-    <targets xdt:Transform="InsertIfMissing">
-      <target name="errorFile" xsi:type="AsyncWrapper" queueLimit="5000" overflowAction="Discard" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)">
+    <targets>
+      <target name="errorFile" xsi:type="AsyncWrapper" queueLimit="50" overflowAction="Grow" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)">
         <target 
           name="ef" 
           xsi:type="File" 
@@ -20,7 +20,8 @@
           xdt:Transform="InsertIfMissing" 
           xdt:Locator="Match(name) "/>
       </target>
-      <target name="infoFile" xsi:type="AsyncWrapper" queueLimit="5000" overflowAction="Discard" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)">
+      <target name="errorFile" xsi:type="AsyncWrapper" queueLimit="50" overflowAction="Grow" xdt:Transform="SetAttributes(name,queueLimit,overflowAction)" xdt:Locator="Match(name)"></target>
+      <target name="infoFile" xsi:type="AsyncWrapper" queueLimit="100" overflowAction="Grow" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)">
         <target 
           name="if" 
           xsi:type="File" 
@@ -36,7 +37,8 @@
           xdt:Transform="InsertIfMissing" 
           xdt:Locator="Match(name) "/>
       </target>
-      <target name="debugFile" xsi:type="AsyncWrapper" queueLimit="5000" overflowAction="Discard" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)">
+      <target name="infoFile" xsi:type="AsyncWrapper" queueLimit="100" overflowAction="Grow" xdt:Transform="SetAttributes(name,queueLimit,overflowAction)" xdt:Locator="Match(name)"></target>
+      <target name="debugFile" xsi:type="AsyncWrapper" queueLimit="1000" overflowAction="Grow" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)">
         <target 
           name="df" 
           xsi:type="File" 
@@ -52,6 +54,7 @@
           xdt:Transform="InsertIfMissing" 
           xdt:Locator="Match(name)" />
       </target>
+    <target name="debugFile" xsi:type="AsyncWrapper" queueLimit="1000" overflowAction="Grow" xdt:Transform="SetAttributes(name,queueLimit,overflowAction)" xdt:Locator="Match(name)"></target>
     </targets>
     <rules xdt:Transform="InsertIfMissing">
       <logger name="*" minlevel="Warn" writeTo="errorFile" enabled="true" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)" />

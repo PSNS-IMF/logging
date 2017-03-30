@@ -10,6 +10,10 @@
     <projectUrl>https://github.com/PSNS-IMF/logging</projectUrl>
     <licenseUrl>https://github.com/PSNS-IMF/logging/blob/master/LICENSE.md</licenseUrl>
     <releaseNotes>
+      ## 2.0.0.2
+      ### Features
+      * Allow Log Category to be set in more extension methods
+
       ## 2.0.0.1
       ### Features
       * Fixing issue with transform config file
